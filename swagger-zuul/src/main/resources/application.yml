@@ -1,0 +1,17 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: swagger-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+zuul:
+  routes:
+    consumera: #服务工程名字
+      path: /consumera/** #配置url请求规则
+      serviceId: consumera #服务名称
+    consumerb:
+      path: /consumerb/**
+      serviceId: consumerb
